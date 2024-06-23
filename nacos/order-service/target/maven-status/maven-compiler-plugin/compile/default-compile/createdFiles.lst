@@ -1,0 +1,11 @@
+com\softeem\order\fallback\UserClientFallbackFactory.class
+com\softeem\order\client\UserClient.class
+com\softeem\order\web\OrderController.class
+com\softeem\order\fallback\UserClientFallbackFactory$1.class
+com\softeem\order\pojo\User.class
+com\softeem\order\service\OrderService.class
+com\softeem\order\config\PatternProperties.class
+com\softeem\order\mapper\OrderMapper.class
+com\softeem\order\pojo\Order.class
+com\softeem\order\config\DefaultFeignConfiguration.class
+com\softeem\order\OrderApplication.class

@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "spring.cloud.nacos.compatibility-verifier.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.nacos.compatibility-verifier.enabled."
+    }
+  ]
+}
