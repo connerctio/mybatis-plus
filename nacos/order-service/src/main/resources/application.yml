@@ -9,14 +9,39 @@ spring:
   application:
     name: orderservice
   cloud:
+    sentinel:
+      web-context-unify: false # 关闭context整合,在链路模式当中不需要整合context
+      transport:
+        dashboard: localhost:8080
     compatibility-verifier:
       enabled: false
     nacos:
-      server-addr: 127.0.0.1:80
+      server-addr: 127.0.0.1:8848
 #      discovery:
 #        ephemeral: false # 是否是临时实例
 #        cluster-name: HZ # 集群名称
 #        namespace: aefa0396-7540-403a-bfd8-2bcb8fe88f6a
+
+feign:
+  sentinel:
+    enabled: true # 开启feign对sentinel的支持
+  circuitbreaker:
+    enabled: true
+#hystrix熔断超时配置
+hystrix:
+  command:
+    default:
+      execution:
+        #开启超时配置(默认为开启)
+        timeout:
+          enabled: true
+        #设置超时时间
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
+
+
 mybatis:
   type-aliases-package: com.softeem.user.pojo
   configuration:

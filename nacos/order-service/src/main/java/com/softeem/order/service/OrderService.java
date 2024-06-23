@@ -1,5 +1,6 @@
 package com.softeem.order.service;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.softeem.order.client.UserClient;
 import com.softeem.order.mapper.OrderMapper;
 import com.softeem.order.pojo.Order;
@@ -26,6 +27,12 @@ public class OrderService {
         // 4.返回
         return order;
     }
+
+    @SentinelResource("goods")
+    public void queryGoods() {
+        System.err.println("查询商品");
+    }
+
 
 
 /*    public Order queryOrderById(Long orderId) {

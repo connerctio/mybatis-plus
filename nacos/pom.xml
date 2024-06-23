@@ -10,16 +10,17 @@
     <modules>
         <module>user-service</module>
         <module>order-service</module>
+        <module>gateway-server</module>
     </modules>
 
     <packaging>pom</packaging>
 
- <!--   <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.9.RELEASE</version>
-        <relativePath/>
-    </parent>-->
+    <!--   <parent>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-parent</artifactId>
+           <version>2.3.9.RELEASE</version>
+           <relativePath/>
+       </parent>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,13 +35,13 @@
     <dependencyManagement>
         <dependencies>
             <!-- springCloud -->
-<!--            <dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>-->
+            </dependency>
 
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>

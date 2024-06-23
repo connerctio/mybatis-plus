@@ -25,11 +25,12 @@ public class UserController {
     private PatternProperties patternProperties;
 
     @GetMapping("now")
-    public String now(){
+    public String now() {
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern(patternProperties.getDateformat()));
     }
+
     @GetMapping("/prop")
-    public PatternProperties prop(){
+    public PatternProperties prop() {
         return patternProperties;
     }
 
@@ -41,6 +42,19 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public User queryById(@PathVariable("id") Long id) {
+        if (id == 1) {
+            try {
+                Thread.sleep(60);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         return userService.queryById(id);
     }
+/*    @GetMapping("/{id}")
+    public User queryById(@PathVariable("id") Long id,
+                          @RequestHeader(value = "Truth",required = false) String name) {
+        System.out.println("请求头中携带的name = " + name);
+        return userService.queryById(id);
+    }*/
 }
