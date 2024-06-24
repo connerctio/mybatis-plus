@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.softeem.mybatisplus.mapper.UserMapper">
+
+    <!-- 定义sql片段-->
+    <sql id="Base_Column_List">
+        uid, name, age, email
+    </sql>
+
+    <select id="selectAllByName" resultType="com.softeem.mybatisplus.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where
+        name like concat('%',#{name},'%')
+    </select>
+    <select id="selectPageByPage" resultType="com.softeem.mybatisplus.entity.User">
+        SELECT <include refid="Base_Column_List"/> FROM user WHERE age > #{age}
+    </select>
+</mapper>
