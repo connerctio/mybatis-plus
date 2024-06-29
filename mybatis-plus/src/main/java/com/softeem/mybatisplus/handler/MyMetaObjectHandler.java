@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 
 @Slf4j
 @Component
+//这个是拦截器。进行插入和修改时，自动填充字段，我们这里插入的是创建时间，修改时间
 public class MyMetaObjectHandler implements MetaObjectHandler {
 
     @Override
