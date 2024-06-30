@@ -53,6 +53,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--web 插件依赖，可以进行异步线程处理，进行异步请求-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!--lombok 插件依赖(小辣椒)-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -60,11 +66,16 @@
             <optional>true</optional>
         </dependency>
 
+        <!--plugin打包依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>3.3.1</version>
         </dependency>
+
+
+
+
 
     </dependencies>
 
